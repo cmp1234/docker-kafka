@@ -1,4 +1,5 @@
 FROM openjdk:8u92-jre-alpine
+
 MAINTAINER King Chung Huang <kchuang@ucalgary.ca>
 
 ENV KAFKA_VERSION=0.10.0.1 \
