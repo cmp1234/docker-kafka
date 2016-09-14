@@ -46,3 +46,5 @@ WORKDIR $KAFKA_HOME
 ENV PATH=$PATH:$KAFKA_HOME/bin
 
 EXPOSE 9092
+
+CMD ["kafka-server-start.sh", "/kafka/config/server.properties"]
