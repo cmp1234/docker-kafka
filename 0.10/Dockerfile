@@ -41,6 +41,9 @@ RUN log () { echo -e "\033[01;95m$@\033[0m"; } && \
 	rm -r "$INSTALL_DIR" "$GNUPGHOME" && \
 	apk del .build-deps
 
+# Adjust the default server properties to connect to Zookeeper at zookeeper:2181
+RUN sed -i 's/zookeeper.connect=.*/zookeeper.connect=zookeeper:2181/g' /kafka/config/server.properties
+
 WORKDIR $KAFKA_HOME
 
 ENV PATH=$PATH:$KAFKA_HOME/bin
