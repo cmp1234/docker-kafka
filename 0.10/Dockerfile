@@ -43,7 +43,9 @@ RUN log () { echo -e "\033[01;95m$@\033[0m"; } && \
 	apk del .build-deps
 
 # Adjust the default server properties to connect to Zookeeper at zookeeper:2181
-RUN sed -i 's/zookeeper.connect=.*/zookeeper.connect=zookeeper:2181/g' /kafka/config/server.properties
+ENV ZOOKEEPER_HOST=zookeeper \
+    ZOOKEEPER_PORT=2181
+RUN sed -i "s/zookeeper.connect=.*/zookeeper.connect=$ZOOKEEPER_HOST:$ZOOKEEPER_PORT/g" /kafka/config/server.properties
 
 WORKDIR $KAFKA_HOME
 
