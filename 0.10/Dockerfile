@@ -47,10 +47,14 @@ ENV ZOOKEEPER_HOST=zookeeper \
     ZOOKEEPER_PORT=2181
 RUN sed -i "s/zookeeper.connect=.*/zookeeper.connect=$ZOOKEEPER_HOST:$ZOOKEEPER_PORT/g" /kafka/config/server.properties
 
+# Add wait-for-it script, for use in waiting for Zookeeper
+ADD https://raw.githubusercontent.com/ucalgary/wait-for-it/master/wait-for-it.sh /usr/local/bin/wait-for-it
+RUN chmod 755 /usr/local/bin/wait-for-it
+
 WORKDIR $KAFKA_HOME
 
 ENV PATH=$PATH:$KAFKA_HOME/bin
 
 EXPOSE 9092
 
-CMD ["kafka-server-start.sh", "/kafka/config/server.properties"]
+CMD wait-for-it -h $ZOOKEEPER_HOST -p $ZOOKEEPER_PORT -s -t 30 -- kafka-server-start.sh /kafka/config/server.properties
