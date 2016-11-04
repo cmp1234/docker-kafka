@@ -27,8 +27,8 @@ RUN log () { echo -e "\033[01;95m$@\033[0m"; } && \
 
 	log "Check the kafka archive signature" && \
 	# See http://www.apache.org/info/verification.html and http://kafka.apache.org/KEYS
-
-	gpg --keyserver ha.pool.sks-keyservers.net --recv-key $GPG_KEY && \
+	wget -O "$INSTALL_DIR/KEYS" "http://kafka.apache.org/KEYS" && \
+	gpg --import "$INSTALL_DIR/KEYS" && \
 	gpg --batch --verify "$INSTALL_DIR/kafka.tgz.asc" "$INSTALL_DIR/kafka.tgz" && \
 
 	log "Unpack kafka" && \
