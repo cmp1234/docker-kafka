@@ -2,7 +2,7 @@ FROM openjdk:8u92-jre-alpine
 
 MAINTAINER King Chung Huang <kchuang@ucalgary.ca>
 
-ENV KAFKA_VERSION=0.10.1.0 \
+ENV KAFKA_VERSION=0.10.1.1 \
     SCALA_VERSION=2.11 \
     GPG_KEY=AB55EF5C \
     KAFKA_HOME=/kafka
