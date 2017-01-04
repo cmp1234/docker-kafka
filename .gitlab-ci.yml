@@ -4,7 +4,7 @@ stages:
   - build
 
 variables:
-  BUILD_CONTEXT_PATH: '.'
+  BUILD_CONTEXT_PATH: '0.10'
   IMAGE_TAG: $CI_BUILD_REF_NAME
 
 before_script:
