@@ -1,7 +1,5 @@
 FROM openjdk:8u92-jre-alpine
 
-MAINTAINER King Chung Huang <kchuang@ucalgary.ca>
-
 ENV KAFKA_VERSION=0.10.1.1 \
     SCALA_VERSION=2.11 \
     GPG_KEY=AB55EF5C \
@@ -58,3 +56,5 @@ ENV PATH=$PATH:$KAFKA_HOME/bin
 EXPOSE 9092
 
 CMD wait-for-it -h $ZOOKEEPER_HOST -p $ZOOKEEPER_PORT -s -t 30 -- kafka-server-start.sh /kafka/config/server.properties
+
+LABEL maintainer="King Chung Huang <kchuang@ucalgary.ca>"
