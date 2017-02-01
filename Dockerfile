@@ -1,6 +1,6 @@
 FROM openjdk:8u92-jre-alpine
 
-ENV KAFKA_VERSION=0.10.1.1 \
+ENV KAFKA_VERSION=0.10.2.0 \
     SCALA_VERSION=2.11 \
     GPG_KEY=AB55EF5C \
     KAFKA_HOME=/kafka
