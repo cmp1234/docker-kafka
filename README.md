@@ -18,7 +18,7 @@ Next, create and start a Kafka container, with a link to the Zookeeper container
 docker run --name kakfa --link zookeeper:zookeeper -d ucalgary/kafka
 ```
 
-## Using Docker Compose to Define a Simple Kafka Stack
+## Define a Simple Kafka Stack
 
 [Docker Compose files](https://docs.docker.com/compose/compose-file/) can be used to define and run multi-container systems. Since Kafka requires Zookeeper to run, a Compose file is a great way to define the two services and deploy them together.
 
