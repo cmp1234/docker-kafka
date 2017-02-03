@@ -18,6 +18,27 @@ Next, create and start a Kafka container, with a link to the Zookeeper container
 docker run --name kakfa --link zookeeper:zookeeper -d ucalgary/kafka
 ```
 
+## Using Docker Compose to Define a Simple Kafka Stack
+
+[Docker Compose files](https://docs.docker.com/compose/compose-file/) can be used to define and run multi-container systems. Since Kafka requires Zookeeper to run, a Compose file is a great way to define the two services and deploy them together.
+
+Here is a simple Compose file that defines services for Zookeeper and Kafka.
+
+```
+version: '3'
+services:
+  zookeeper:
+    image: zookeeper
+  kafka:
+    image: ucalgary/kafka
+    depends_on:
+    - zookeeper
+```
+
+Both services will be connected to a default network for this stack when it is brought up using Docker Compose or deployed as a [stack in swarm mode](https://docs.docker.com/engine/reference/commandline/stack_deploy/). Containers for the `kafka` service can automatically connect to `zookeeper` containers via the service name.
+
+The [`depends_on`](https://docs.docker.com/compose/compose-file/#/dependson) parameter expresses a dependency from the kafka service to the zookeeper service. If you specifically tell Docker Compose to start the `kafka` service, Docker Compose will also start the `zookeeper` service because of the declared dependency.
+
 ## Maintenance
 
 This image is currently maintained by the Research Management Systems project at the [University of Calgary](http://www.ucalgary.ca/).
