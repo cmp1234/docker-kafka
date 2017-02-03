@@ -6,7 +6,7 @@
 
 ## Starting a Kafka Broker
 
-Kafka is a distributed system that uses Zookeeper for coordination and state management. Before starting Kafka, you need a Zookeeper service that it can connect to. The [official zookeeper image](https://hub.docker.com/_/zookeeper/) can be used to create and start a Zookeeper container.
+Kafka is a distributed system that uses Zookeeper to coordinate Kafka brokers and keep track of Kafka topics and partitions. Before starting Kafka, you need a Zookeeper service that it can connect to. The [official zookeeper image](https://hub.docker.com/_/zookeeper/) can be used to create and start a Zookeeper container.
 
 ```
 docker run --name zookeeper -d zookeeper
