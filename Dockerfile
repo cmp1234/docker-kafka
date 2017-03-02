@@ -57,4 +57,9 @@ EXPOSE 9092
 
 CMD wait-for-it -h $ZOOKEEPER_HOST -p $ZOOKEEPER_PORT -s -t 30 -- kafka-server-start.sh /kafka/config/server.properties
 
-LABEL maintainer="King Chung Huang <kchuang@ucalgary.ca>"
+LABEL maintainer="King Chung Huang <kchuang@ucalgary.ca>" \
+      org.label-schema.schema-version="1.0" \
+      org.label-schema.name="Apache Kafka" \
+      org.label-schema.version="0.10.2.0" \
+      org.label-schema.url="https://kafka.apache.org" \
+      org.label-schema.vcs-url="https://github.com/ucalgary/docker-kafka"
