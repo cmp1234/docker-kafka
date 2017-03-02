@@ -1,6 +1,6 @@
 # Kafka
 
-[![](https://images.microbadger.com/badges/image/ucalgary/kafka.svg)](https://microbadger.com/images/ucalgary/kafka)
+[![](https://images.microbadger.com/badges/image/ucalgary/kafka.svg)](https://microbadger.com/images/ucalgary/kafka) [![Anchore Image Overview](https://anchore.io/service/badges/image/1833f7b5abc397663b33d995377780431d46fa88c0474a3dc6d29aa21ec49cc0)](https://anchore.io/image/dockerhub/ucalgary%2Fkafka%3Alatest)
 
 [Kafka](https://kafka.apache.org) is a distributed streaming platform that lets you publish and subscribe to streams of records in fault-tolerant way and lets you process streams of records as they occur.
 
