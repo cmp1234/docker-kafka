@@ -39,6 +39,8 @@ Both services will be connected to a default network for this stack when it is b
 
 The [`depends_on`](https://docs.docker.com/compose/compose-file/#/dependson) parameter expresses a dependency from the kafka service to the zookeeper service. If you specifically tell Docker Compose to start the `kafka` service, Docker Compose will also start the `zookeeper` service because of the declared dependency.
 
+*Note: `depends_on` does not apply for Docker stack deployments.*
+
 ## Maintenance
 
 This image is currently maintained by the Research Management Systems project at the [University of Calgary](http://www.ucalgary.ca/).
