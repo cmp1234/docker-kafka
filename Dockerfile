@@ -1,4 +1,4 @@
-FROM openjdk:8u111-jre-alpine
+FROM openjdk:8u121-jre-alpine
 
 ENV KAFKA_VERSION=0.10.2.0 \
     SCALA_VERSION=2.12 \
