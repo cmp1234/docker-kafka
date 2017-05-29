@@ -4,6 +4,8 @@
 
 [Kafka](https://kafka.apache.org) is a distributed streaming platform that lets you publish and subscribe to streams of records in fault-tolerant way and lets you process streams of records as they occur.
 
+**NOTE: This image is no longer maintained. See [confluentinc/cp-kafka](https://hub.docker.com/r/confluentinc/cp-kafka/) for Kafka images.**
+
 ## Starting a Kafka Broker
 
 Kafka is a distributed system that uses Zookeeper to coordinate Kafka brokers and keep track of Kafka topics and partitions. Before starting Kafka, you need a Zookeeper service that it can connect to. The [official zookeeper image](https://hub.docker.com/_/zookeeper/) can be used to create and start a Zookeeper container.
@@ -40,7 +42,3 @@ Both services will be connected to a default network for this stack when it is b
 The [`depends_on`](https://docs.docker.com/compose/compose-file/#/dependson) parameter expresses a dependency from the kafka service to the zookeeper service. If you specifically tell Docker Compose to start the `kafka` service, Docker Compose will also start the `zookeeper` service because of the declared dependency.
 
 *Note: `depends_on` does not apply for Docker stack deployments.*
-
-## Maintenance
-
-This image is currently maintained by the Research Management Systems project at the [University of Calgary](http://www.ucalgary.ca/).
