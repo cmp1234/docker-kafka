@@ -37,6 +37,7 @@ RUN log () { echo -e "\033[01;95m$@\033[0m"; } && \
 	rm -r "$KAFKA_HOME/bin/windows" && \
 
 	log "Clean up" && \
+	ls -l "$GNUPGHOME" && \
 	rm -r "$INSTALL_DIR" "$GNUPGHOME" && \
 	apk del .build-deps
 
