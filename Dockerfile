@@ -60,8 +60,7 @@ EXPOSE 9092
 
 CMD wait-for-it -h $ZOOKEEPER_HOST -p $ZOOKEEPER_PORT -s -t 30 -- kafka-server-start.sh /kafka/config/server.properties
 
-LABEL maintainer="King Chung Huang <kchuang@ucalgary.ca>" \
-      org.label-schema.schema-version="1.0" \
+LABEL org.label-schema.schema-version="1.0" \
       org.label-schema.name="Apache Kafka" \
       org.label-schema.version="0.10.1.1" \
       org.label-schema.url="https://kafka.apache.org" \
