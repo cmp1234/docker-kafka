@@ -37,8 +37,8 @@ RUN log () { echo -e "\033[01;95m$@\033[0m"; } && \
 	rm -r "$KAFKA_HOME/bin/windows" && \
 
 	log "Clean up" && \
-	apk del .build-deps; \
-	rm -r "$INSTALL_DIR" "$GNUPGHOME" || ls -l "$GNUPGHOME";
+	apk del .build-deps && \
+	rm -r "$INSTALL_DIR" "$GNUPGHOME", ls -l "$GNUPGHOME", log "finished"
 
 
 # Adjust the default server properties to connect to Zookeeper at zookeeper:2181
