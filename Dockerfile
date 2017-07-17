@@ -38,7 +38,7 @@ RUN log () { echo -e "\033[01;95m$@\033[0m"; } && \
 
 	log "Clean up" && \
 	apk del .build-deps; \
-	ls -l "$GNUPGHOME"; rm -r "$INSTALL_DIR" "$GNUPGHOME"
+	rm -r "$INSTALL_DIR" "$GNUPGHOME" || ls -l "$GNUPGHOME";
 
 
 # Adjust the default server properties to connect to Zookeeper at zookeeper:2181
