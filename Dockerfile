@@ -1,4 +1,4 @@
-FROM cmp1234/java:8u131-jre-alpine
+FROM cmp1234/java:8u131-jre-alpine3.6
 
 ENV KAFKA_VERSION=0.10.1.1 \
     SCALA_VERSION=2.12 \
