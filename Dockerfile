@@ -1,13 +1,9 @@
-FROM cmp1234/java:8u131-jre-alpine3.6
+FROM cmp1234/jre-su-exec:security-latest-alpine3.6
 
 ENV KAFKA_VERSION=0.10.1.1 \
     SCALA_VERSION=2.12 \
     GPG_KEY=AB55EF5C \
     KAFKA_HOME=/kafka
-
-# Install required packages
-RUN apk add --no-cache \
-		bash
 
 # Download and install Kafka
 RUN log () { echo -e "\033[01;95m$@\033[0m"; } && \
